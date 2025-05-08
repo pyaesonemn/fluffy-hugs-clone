@@ -1,1 +1,49 @@
 @import "tailwindcss";
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes float-alt {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.float-animation {
+  animation: float 1s ease-in-out infinite;
+}
+
+.float-animation-alt {
+  animation: float-alt 1s ease-in-out infinite;
+}
+
+.float-animation-delay-1 {
+  animation-delay: 1s;
+}
+
+.float-animation-delay-2 {
+  animation-delay: 2s;
+}
+
+.float-animation-delay-3 {
+  animation-delay: 3s;
+}
+
+.float-animation-delay-4 {
+  animation-delay: 4s;
+}
