@@ -1,7 +1,8 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel } from "swiper/modules";
-// import { useState } from "react";
+import { useState } from "react";
 
+import PersistentCharacter from "./components/PersistentCharacter";
 import Hero from "./screens/Hero";
 import Banner from "./screens/Banner";
 import Text from "./screens/Text";
@@ -12,14 +13,11 @@ import "swiper/css/mousewheel";
 const screens = [Hero, Banner, Text];
 
 const CircularSwiper = () => {
-  // const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   return (
     <div className="h-screen w-full overflow-hidden">
-      {/* <div
-        className="fixed w-16 h-16 bg-white border-2 border-black z-50 bottom-8 right-8 transition-transform duration-500"
-        style={{ transform: `rotate(${activeIndex * 90}deg)` }}
-      /> */}
+      <PersistentCharacter activeIndex={activeIndex} />
 
       <Swiper
         direction="vertical"
@@ -30,7 +28,7 @@ const CircularSwiper = () => {
         loop={true}
         modules={[Mousewheel]}
         className="mySwiper h-full"
-        // onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+        onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
       >
         {screens.map((Screen, index) => (
           <SwiperSlide key={index} className="h-full">
