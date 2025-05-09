@@ -4,7 +4,7 @@ import FloatingShapes from "../components/FloatingShapes";
 
 const Banner = () => {
   return (
-    <div className="bg-[#FCF6EB] w-[100dvw] h-[100dvh] overflow-hidden relative">
+    <div className="bg-[#FCF6EB] w-[100dvw] h-[100dvh] relative">
       <FloatingShapes
         count={8}
         backgroundColor="transparent"
