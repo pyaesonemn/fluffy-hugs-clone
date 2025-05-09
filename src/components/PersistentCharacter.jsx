@@ -1,48 +1,18 @@
 import React from "react";
+import cn from "../utils/cn";
 
 const PersistentCharacter = ({ activeIndex }) => {
-  const getElementStyle = (activeIndex) => {
-    if (activeIndex === 0) {
-      return {
-        transform: "rotate(0deg)",
-        opacity: 0,
-        left: "50%",
-        top: "60%",
-        transitionDuration: "0ms",
-      };
-    } else if (activeIndex === 1) {
-      return {
-        transform: "rotate(-90deg)",
-        opacity: 1,
-        left: "50%",
-        top: "28%",
-        transitionDuration: "500ms",
-      };
-    } else {
-      return {
-        transform: "rotate(0deg)",
-        opacity: 1,
-        left: "28%",
-        bottom: "-7%",
-        top: "auto",
-        transitionDuration: "500ms",
-      };
-    }
-  };
-
-  const style = getElementStyle(activeIndex);
-
   return (
     <div
-      className="fixed w-[20em] h-[36rem] bg-transparent z-10 -translate-x-1/2 transition-all pointer-events-none"
-      style={{
-        transform: style.transform,
-        opacity: style.opacity,
-        left: style.left,
-        top: style.top,
-        bottom: style.bottom,
-        transitionDuration: style.transitionDuration,
-      }}
+      className={cn(
+        "fixed w-[14xem] h-[24rem] md:w-[20em] md:h-[36rem] sm:mt-0 mt-[3rem] bg-transparent z-10 -translate-x-1/2 transition-all pointer-events-none",
+        activeIndex === 0 &&
+          "opacity-0 rotate-0 duration-0 top-[60%] left-[50%]",
+        activeIndex === 1 &&
+          "opacity-100 -rotate-90 duration-500 top-[28%] left-[50%]",
+        activeIndex === 2 &&
+          "opacity-100 rotate-0 duration-500 bottom-[-7%] sm:left-[28%] left-[50%] top-auto"
+      )}
     >
       <img
         src="/rotate-character.webp"

@@ -10,11 +10,11 @@ const Banner = () => {
         backgroundColor="transparent"
         direction="vertical"
       />
-      <div className="absolute top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+      <div className="absolute w-[80dvw] top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
         <img
           src="/fluffy-hugs-logo.webp"
           alt="logo"
-          className="w-[64rem] object-contain"
+          className="w-full object-contain"
         />
       </div>
       <Footer />
