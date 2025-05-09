@@ -16,7 +16,7 @@ const CircularSwiper = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="h-screen w-full overflow-hidden">
+    <div className="h-[100vh] w-full overflow-hidden">
       <PersistentCharacter activeIndex={activeIndex} />
 
       <Swiper
@@ -27,11 +27,12 @@ const CircularSwiper = () => {
         speed={800}
         loop={true}
         modules={[Mousewheel]}
-        className="mySwiper h-full"
+        className="mySwiper h-full w-full"
         onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+        cssMode={false}
       >
         {screens.map((Screen, index) => (
-          <SwiperSlide key={index} className="h-full">
+          <SwiperSlide key={index} className="h-full w-full overflow-hidden">
             <Screen />
           </SwiperSlide>
         ))}
